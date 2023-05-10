@@ -47,7 +47,7 @@ const PokeCard = memo(({ name, url }) => {
 
   return (
     <Link
-      to={`/pokedex-app/${name}`}
+      to={`/${name}`}
       className='bg-blue-100 flex w-full rounded-2xl my-2 pr-2 h-[150px] shadow-lg
       lg:flex-col lg:h-auto lg:p-0 overflow-hidden'
     >

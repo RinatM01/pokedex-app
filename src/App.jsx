@@ -7,12 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/pokedex-app/' element={<PokeSearch />} />
-        <Route
-          exact
-          path='/pokedex-app/:pokemon'
-          element={<SinglePoke />}
-        />
+        <Route exact path='/' element={<PokeSearch />} />
+        <Route exact path='/:pokemon' element={<SinglePoke />} />
       </Routes>
     </BrowserRouter>
   );
