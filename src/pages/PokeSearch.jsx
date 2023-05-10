@@ -55,7 +55,6 @@ const PokeSearch = () => {
             if (pageLim * pageNumber === index + 1) {
               return (
                 <div key={`lol-${index}`} ref={lastBookElementRef}>
-                  aaaa
                   <PokeCard key={pokemon.name} {...pokemon} />
                 </div>
               );
