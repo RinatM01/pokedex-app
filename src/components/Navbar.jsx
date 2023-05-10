@@ -13,7 +13,7 @@ const Navbar = ({ isSingle }) => {
       <div>
         {isSingle && (
           <Link
-            to='/'
+            to='/pokedex-app/'
             className='text-white text-2xl lg:text-4xl xl:text-2xl'
           >
             <FontAwesomeIcon icon={faBackward} />{' '}
