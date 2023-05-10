@@ -64,6 +64,15 @@ const PokeSearch = () => {
             }
           })}
       </div>
+      {pokemons.filter((pokemon) =>
+        pokemon.name.startsWith(value.toLowerCase())
+      ).length === 0 && (
+        <div className='flex justify-center w-full mt-10'>
+          <h2 className='text-3xl text-gray-600'>
+            No such pokemon found!
+          </h2>
+        </div>
+      )}
     </div>
   );
 };

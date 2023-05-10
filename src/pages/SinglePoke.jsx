@@ -3,32 +3,47 @@ import { useParams } from 'react-router-dom';
 import { cap, typeColors } from '../helper';
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
+import Error from '../components/Error';
 
 const SinglePoke = () => {
   const { pokemon } = useParams();
+
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
   const urlSpec = `https://pokeapi.co/api/v2/pokemon-species/${pokemon}`;
+
   const [poke, setPoke] = useState(null);
   const [pokeSpec, setPokespec] = useState(null);
+  const [error, setError] = useState(false);
 
+  //Fetching Data
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setPoke(json));
+      .then((json) => setPoke(json))
+      .catch((error) => {
+        console.log(error);
+        setError(true);
+      });
     fetch(urlSpec)
       .then((response) => response.json())
-      .then((json) => setPokespec(json));
+      .then((json) => setPokespec(json))
+      .catch((error) => {
+        console.log(error);
+        setError(true);
+      });
   }, []);
+
+  //Sping the loader if data is not ready or show error message if there is one
   if (!poke || !pokeSpec) {
     return (
       <div>
         <Navbar isSingle={true} />
-        <Loader />
+        {error ? <Error /> : <Loader />}
       </div>
     );
   }
   //   console.log(poke);
-  console.log(pokeSpec);
+  //   console.log(pokeSpec);
   return (
     <div>
       <Navbar isSingle={true} />
