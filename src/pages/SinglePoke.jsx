@@ -28,7 +28,7 @@ const SinglePoke = () => {
     );
   }
   //   console.log(poke);
-  //   console.log(pokeSpec);
+  console.log(pokeSpec);
   return (
     <div>
       <Navbar isSingle={true} />
@@ -56,9 +56,9 @@ const SinglePoke = () => {
           </h1>
           <p className='text-xl mt-3 leading-6 lg:text-2xl'>
             {pokeSpec.flavor_text_entries.length != 0
-              ? pokeSpec.flavor_text_entries.filter(
-                  (text) => text.language.name == 'en'
-                )[0].flavor_text
+              ? pokeSpec.flavor_text_entries
+                  .filter((text) => text.language.name == 'en')[0]
+                  .flavor_text.replace(/\n/g, ' ')
               : 'No description found.'}
           </p>
 
