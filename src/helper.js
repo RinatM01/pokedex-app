@@ -6,7 +6,7 @@ const typeColors = {
   fire: 'bg-[#DA5035]',
   water: 'bg-[#6198F8]',
   electric: 'bg-[#EECE55]',
-  grass: 'bg-[#EECE55]',
+  grass: 'bg-[#8CC760]',
   ice: 'bg-[#80CAFA]',
   fighting: 'bg-[#AE5B4A]',
   poison: 'bg-[#9F5A96]',
